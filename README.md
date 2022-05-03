@@ -1,0 +1,2 @@
+# -serial
+$serial = InputBox ( 'Enter Serial Number', 'Enter serial number with or without -' ) if $serial='' then Exit    Do     $serial = StringReplace( $serial, '-', '' )     $pos = StringInStr($serial, "-") until $pos = 0  Do     $serial = StringReplace( $serial, ' ', '')     $spos = StringInStr($serial, " ") until $spos = 0  SplashTextOn ( 'Select', 'Select the window' &amp; @LF &amp; 'in next 4 seconds.', 150, 75 ) WinMove ( 'Select', '', 1, 1, 150, 75 ) Sleep ( 4000 ) SplashOff ( ) Send ( $serial )
